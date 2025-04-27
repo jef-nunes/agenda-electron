@@ -1,0 +1,5 @@
+Erro "Was compiled against a different Node.js version"
+1. rm -rf node_modules
+2. rm package-lock.json
+3. npm install --save-dev electron-rebuild
+4. npx electron-rebuild
