@@ -1,18 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
-    <title>Agenda de Contatos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+  <title>Tabela Interativa</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="form-container">
-        <input type="text" name="" id="nome-input">
-        <input type="text" name="" id="email-input">
-        <input type="text" name="" id="telefone-input">
-        <button>Enviar</button>
+
+  <h2>Tabela Interativa</h2>
+
+  <!-- Formulário para adicionar registro -->
+    <div class="form1">
+        <label>Nome: <input type="text" id="nomeInput"></label>
+        <label>Email: <input type="text" id="emailInput"></label>
+        <label>Telefone: <input type="text" id="telefoneInput"></label>
+        <button id="bt-adc">Adicionar</button>
     </div>
+
+  <!-- Tabela -->
+  <table id="listaContatos">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Registros serão adicionados aqui -->
+    </tbody>
+  </table>
+
+  <!-- Formulário popup para edição de registros -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popupForm">
+    <h3>Editar contato</h3>
+      <label>Nome: <input type="text" id="editNomeInput"></label><br><br>
+      <label>Email: <input type="text" id="editEmailInput"></label><br><br>
+      <label>Telefone: <input type="text" id="editTelefoneInput"></label><br><br>
+      <button type="button" onclick="salvarEdicao()">Salvar</button>
+      <button type="button" onclick="fecharEdicao()">Cancelar</button>
+  </div>
+
+  <script src="js/controle_tabela.js"></script>
 </body>
 </html>
